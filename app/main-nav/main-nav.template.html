@@ -1,0 +1,22 @@
+<nav id="mainNav">
+    <div id="logo" class="navComponents">
+        <a id="logoLink" href="#!/home" ng-click="setActive($event);">
+            <img alt="Brand" src="images/logo_skewed.svg">
+        </a>
+    </div>
+    <div id="navButtons" class="navComponents">
+        <ul class="">
+            <li id="homeLink" role="presentation" ng-click="setActive($event);">
+                <a href="#!/groups"><span>Home</span></a>
+                <!-- <div class="navDecal"></div> -->
+            </li>
+            <li id="aboutLink" role="presentation" class="navInactive" ng-click="setActive($event);">
+                <a href="#!/about"><span>About</span></a>
+                <!-- <div class="navDecal"></div> -->
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="messageBar" ng-click="hideBar();">
+    <span id="message"></span>
+</div>

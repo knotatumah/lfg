@@ -1,0 +1,270 @@
+<div id="submitGroup" class="col-md-12">
+    <div class="col-md-4 col-md-offset-4 text-center">
+        <h2>Add a Group</h2>
+    </div>
+    <div class="col-md-8 col-md-offset-2 text-center formMenu" ng-click="hideMenu();">
+        <div class="glyphLine"></div>
+        <!-- <img src="images/triangle.svg" class="glyphLine"/> -->
+        <span id="addGlyph" class="glyphicon glyphicon-menu-up menuGlyph" aria-hidden="true"></span>
+        <div class="glyphLine"></div>
+    </div>
+    <div id="addForm" class="col-md-8 col-md-offset-2 addGroupForm">
+        <div id="addTray" class="col-md-12 addGroupTray">
+            <div class="form-group row col-md-12">
+                <div id="addGroupUser" class="form-group col-md-6">
+                    <label for="" class="col-md-4 col-form-label text-right">User Name</label>
+                    <div class="col-md-8">
+                        <input type="text" placeholder="" class="form-control formSelects" ng-model="groupComponents.user"/>
+                    </div>
+                </div>
+                <div id="addGroupIam" class="form-group col-md-6">
+                    <label for="" class="col-md-4 col-form-label text-right">I am</label>
+                    <div class="col-md-8">
+                        <select class="form-control formSelects" ng-model="groupComponents.iam">
+                            <option value=""></option>
+                            <option value="0">Looking for Group</option>
+                            <option value="1">Looking for More</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div id="addGroupSystem" class="form-group col-md-6">
+                    <label for="" class="col-md-4 col-form-label text-right">System</label>
+                    <div class="col-md-8">
+                        <select ng-options="system.system_id as system.system_name for system in systems.data track by system.system_id" ng-model="groupComponents.system" ng-change="getGames();" class="form-control formSelects">
+                            <option value="">-- Any System --</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="addGroupGame" class="form-group col-md-6">
+                    <label for="" class="col-md-4 col-form-label text-right">Game</label>
+                    <div class="col-md-8">
+                        <select ng-options="game.game_id as game.game_name for game in games track by game.game_id" ng-model="groupComponents.game" ng-change="getActivities();" class="form-control formSelects">
+                            <option value="">-- Select a Game --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div id="addGroupActivity" class="form-group col-md-6">
+                    <label for="" class="col-md-4 col-form-label text-right">Activity</label>
+                    <div class="col-md-8">
+                        <select ng-options="activity.activity_id as activity.activity_name for activity in activities.data track by activity.activity_id" ng-model="groupComponents.activity" class="form-control formSelects">
+                            <option value="">-- Select an Activity --</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="addGroupDetails" class="form-group col-md-6">
+                    <label for="" class="col-md-4 col-form-label text-right">Details</label>
+                    <div class="col-md-8">
+                        <input type="text" ng-model="groupComponents.details" class="form-control formSelects" placeholder="Additional details here" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-md-12">
+                <div id="addGroupLanguage" class="form-group col-md-6">
+                    <label for="" class="col-md-4 col-form-label text-right">Language</label>
+                    <div class="col-md-8">
+                        <select class="form-control formSelects" ng-model="groupComponents.language">
+                            <option value="eng" selected="selected">English</option>
+                            <option value="---" disabled>------------</option>
+                            <option value="abk">Abkhaz</option>
+                            <option value="aar">Afar</option>
+                            <option value="afr">Afrikaans</option>
+                            <option value="aka">Akan</option>
+                            <option value="alb">Albanian</option>
+                            <option value="amh">Amharic</option>
+                            <option value="ara">Arabic</option>
+                            <option value="arg">Aragonese</option>
+                            <option value="arm">Armenian</option>
+                            <option value="asm">Assamese</option>
+                            <option value="ava">Avaric</option>
+                            <option value="ave">Avestan</option>
+                            <option value="aym">Aymara</option>
+                            <option value="aze">Azerbaijani</option>
+                            <option value="bam">Bambara</option>
+                            <option value="bak">Bashkir</option>
+                            <option value="baq">Basque</option>
+                            <option value="bel">Belarusian</option>
+                            <option value="ben">Bengali, Bangla</option>
+                            <option value="bih">Bihari</option>
+                            <option value="bis">Bislama</option>
+                            <option value="bos">Bosnian</option>
+                            <option value="bre">Breton</option>
+                            <option value="bul">Bulgarian</option>
+                            <option value="bur">Burmese</option>
+                            <option value="cat">Catalan</option>
+                            <option value="cha">Chamorro</option>
+                            <option value="che">Chechen</option>
+                            <option value="nya">Chichewa, Chewa, Nyanja</option>
+                            <option value="chi">Chinese</option>
+                            <option value="chv">Chuvash</option>
+                            <option value="cor">Cornish</option>
+                            <option value="cos">Corsican</option>
+                            <option value="cre">Cree</option>
+                            <option value="hrv">Croatian</option>
+                            <option value="cze">Czech</option>
+                            <option value="dan">Danish</option>
+                            <option value="div">Divehi, Dhivehi, Maldivian</option>
+                            <option value="dut">Dutch</option>
+                            <option value="dzo">Dzongkha</option>
+                            <option value="epo">Esperanto</option>
+                            <option value="est">Estonian</option>
+                            <option value="ewe">Ewe</option>
+                            <option value="fao">Faroese</option>
+                            <option value="fij">Fijian</option>
+                            <option value="fin">Finnish</option>
+                            <option value="fre">French</option>
+                            <option value="ful">Fula, Fulah, Pulaar, Pular</option>
+                            <option value="glg">Galician</option>
+                            <option value="geo">Georgian</option>
+                            <option value="ger">German</option>
+                            <option value="gre">Greek (modern)</option>
+                            <option value="grn">Guaraní</option>
+                            <option value="guj">Gujarati</option>
+                            <option value="hat">Haitian, Haitian Creole</option>
+                            <option value="hau">Hausa</option>
+                            <option value="heb">Hebrew (modern)</option>
+                            <option value="her">Herero</option>
+                            <option value="hin">Hindi</option>
+                            <option value="hmo">Hiri Motu</option>
+                            <option value="hun">Hungarian</option>
+                            <option value="ina">Interlingua</option>
+                            <option value="ind">Indonesian</option>
+                            <option value="ile">Interlingue</option>
+                            <option value="gle">Irish</option>
+                            <option value="ibo">Igbo</option>
+                            <option value="ipk">Inupiaq</option>
+                            <option value="ido">Ido</option>
+                            <option value="ice">Icelandic</option>
+                            <option value="ita">Italian</option>
+                            <option value="iku">Inuktitut</option>
+                            <option value="jpn">Japanese</option>
+                            <option value="jav">Javanese</option>
+                            <option value="kal">Kalaallisut, Greenlandic</option>
+                            <option value="kan">Kannada</option>
+                            <option value="kau">Kanuri</option>
+                            <option value="kas">Kashmiri</option>
+                            <option value="kaz">Kazakh</option>
+                            <option value="khm">Khmer</option>
+                            <option value="kik">Kikuyu, Gikuyu</option>
+                            <option value="kin">Kinyarwanda</option>
+                            <option value="kir">Kyrgyz</option>
+                            <option value="kom">Komi</option>
+                            <option value="kon">Kongo</option>
+                            <option value="kor">Korean</option>
+                            <option value="kur">Kurdish</option>
+                            <option value="kua">Kwanyama, Kuanyama</option>
+                            <option value="lat">Latin</option>
+                            <option value="ltz">Luxembourgish, Letzeburgesch</option>
+                            <option value="lug">Ganda</option>
+                            <option value="lim">Limburgish, Limburgan, Limburger</option>
+                            <option value="lin">Lingala</option>
+                            <option value="lao">Lao</option>
+                            <option value="lit">Lithuanian</option>
+                            <option value="lub">Luba-Katanga</option>
+                            <option value="lav">Latvian</option>
+                            <option value="glv">Manx</option>
+                            <option value="mac">Macedonian</option>
+                            <option value="mlg">Malagasy</option>
+                            <option value="may">Malay</option>
+                            <option value="mal">Malayalam</option>
+                            <option value="mlt">Maltese</option>
+                            <option value="mao">Maori</option>
+                            <option value="mar">Marathi (Mara?hi)</option>
+                            <option value="mah">Marshallese</option>
+                            <option value="mon">Mongolian</option>
+                            <option value="nau">Nauru</option>
+                            <option value="nav">Navajo, Navaho</option>
+                            <option value="nde">Northern Ndebele</option>
+                            <option value="nep">Nepali</option>
+                            <option value="ndo">Ndonga</option>
+                            <option value="nob">Norwegian Bokmål</option>
+                            <option value="nno">Norwegian Nynorsk</option>
+                            <option value="nor">Norwegian</option>
+                            <option value="iii">Nuosu</option>
+                            <option value="nbl">Southern Ndebele</option>
+                            <option value="oci">Occitan</option>
+                            <option value="oji">Ojibwe, Ojibwa</option>
+                            <option value="chu">Old Church Slavonic, Church Slavonic, Old Bulgarian</option>
+                            <option value="orm">Oromo</option>
+                            <option value="ori">Oriya</option>
+                            <option value="oss">Ossetian, Ossetic</option>
+                            <option value="pan">Panjabi, Punjabi</option>
+                            <option value="pli">Pali</option>
+                            <option value="per">Persian (Farsi)</option>
+                            <option value="pol">Polish</option>
+                            <option value="pus">Pashto, Pushto</option>
+                            <option value="por">Portuguese</option>
+                            <option value="que">Quechua</option>
+                            <option value="roh">Romansh</option>
+                            <option value="run">Kirundi</option>
+                            <option value="rum">Romanian</option>
+                            <option value="zhr">Rothongua</option>
+                            <option value="rus">Russian</option>
+                            <option value="san">Sanskrit</option>
+                            <option value="srd">Sardinian</option>
+                            <option value="snd">Sindhi</option>
+                            <option value="sme">Northern Sami</option>
+                            <option value="smo">Samoan</option>
+                            <option value="sag">Sango</option>
+                            <option value="srp">Serbian</option>
+                            <option value="gla">Scottish Gaelic, Gaelic</option>
+                            <option value="sna">Shona</option>
+                            <option value="sin">Sinhala, Sinhalese</option>
+                            <option value="slo">Slovak</option>
+                            <option value="slv">Slovene</option>
+                            <option value="som">Somali</option>
+                            <option value="sot">Southern Sotho</option>
+                            <option value="spa">Spanish</option>
+                            <option value="sun">Sundanese</option>
+                            <option value="swa">Swahili</option>
+                            <option value="ssw">Swati</option>
+                            <option value="swe">Swedish</option>
+                            <option value="tam">Tamil</option>
+                            <option value="tel">Telugu</option>
+                            <option value="tgk">Tajik</option>
+                            <option value="tha">Thai</option>
+                            <option value="tir">Tigrinya</option>
+                            <option value="tib">Tibetan Standard, Tibetan, Central</option>
+                            <option value="tuk">Turkmen</option>
+                            <option value="tgl">Tagalog</option>
+                            <option value="tsn">Tswana</option>
+                            <option value="ton">Tonga (Tonga Islands)</option>
+                            <option value="tur">Turkish</option>
+                            <option value="tso">Tsonga</option>
+                            <option value="tat">Tatar</option>
+                            <option value="twi">Twi</option>
+                            <option value="tah">Tahitian</option>
+                            <option value="uig">Uyghur</option>
+                            <option value="ukr">Ukrainian</option>
+                            <option value="urd">Urdu</option>
+                            <option value="uzb">Uzbek</option>
+                            <option value="ven">Venda</option>
+                            <option value="vie">Vietnamese</option>
+                            <option value="vol">Volapük</option>
+                            <option value="wln">Walloon</option>
+                            <option value="wel">Welsh</option>
+                            <option value="wol">Wolof</option>
+                            <option value="fry">Western Frisian</option>
+                            <option value="xho">Xhosa</option>
+                            <option value="yid">Yiddish</option>
+                            <option value="yor">Yoruba</option>
+                            <option value="zha">Zhuang, Chuang</option>
+                            <option value="zul">Zulu</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+                <p><strong>This is a portfolio piece and not an active service, any new entries will be removed within 1 hour</strong></p>
+            </div>
+            <div id="submitButton" class="form-group row col-md-4 col-md-offset-4 text-center">
+                <img src="images/gear.svg" class="loadingGear"/>
+                <img src="images/gear.svg" class="loadingGear"/>
+                <button type="button" class="btn btn-outline btn-lg" ng-click="submitGroup();">Add Group</button>
+            </div>
+        </div>
+    </div>
+</div>

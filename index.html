@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="lfgApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LFG Project</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+    <main-nav id="mainNavContainer"></main-nav>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div ng-view id="ngView"></div>
+    <div id="footer">
+        <div id="footerInfo">
+            <div><span>Zach Stark</span></div>
+            <div><span>Portfolio 2016</span></div>
+        </div>
+    </div>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="vendor/livestampjs/livestamp.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/components/version/version.js"></script>
+    <script src="app/components/version/version-directive.js"></script>
+    <script src="app/components/version/interpolate-filter.js"></script>
+    <script src="app/main-nav/main-nav.module.js"></script>
+    <script src="app/main-nav/main-nav.component.js"></script>
+    <script src="app/message-bar/message-bar.module.js"></script>
+    <script src="app/message-bar/message-bar.component.js"></script>
+    <script src="app/add-group/add-group.module.js"></script>
+    <script src="app/add-group/add-group.component.js"></script>
+    <script src="api/api.module.js"></script>
+    <script src="api/api.module.js"></script>
+    <script src="api/api.service.js"></script>
+    <script src="app/home/home.js"></script>
+    <script src="app/fetch-groups/fetch-groups.module.js"></script>
+    <script src="app/fetch-groups/fetch-groups.component.js"></script>
+    <script src="app/about/about.js"></script>
+</body>
+</html>
